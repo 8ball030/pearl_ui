@@ -17,6 +17,9 @@ test:
 check-diff:
 	git diff --exit-code
 
+codegen:
+	npx openapi-typescript-codegen --input open-api-spec.yaml --output src/lib/api --client axios
+
 release:
 	if [ -z "$GITHUB_TOKEN" ]; then \
 		echo "GITHUB_TOKEN is not set. Aborting release."; \
@@ -30,4 +33,4 @@ build-docker:
 	echo "Building $$USER_NAME/$$REPO_NAME:latest"; \
 	docker build -t $$USER_NAME/$$REPO_NAME:latest .
 
-all: format lint check build
+all: codegen format lint check build
