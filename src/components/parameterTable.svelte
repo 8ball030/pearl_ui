@@ -11,7 +11,6 @@
 	onMount(async () => {
 		OpenAPI.BASE = 'http://localhost:8000';
 		data = await DefaultService.getParameters();
-		console.log(data);
 	});
 
 	// post an update to a parameter
@@ -29,9 +28,7 @@
 <!-- Add a new line -->
 
  <Card >
-
 	<h1 class="text-lg font-medium mb-4 px-2">Parameter Table</h1>
-
 	<Table.Root class="p-6">
 		<Table.Header class="bg-slate-800/70">
 			<Table.Row>
@@ -67,5 +64,4 @@
 			{/each}
 		</Table.Body>
 	</Table.Root>
-
  </Card>
