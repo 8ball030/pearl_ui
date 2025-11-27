@@ -24,4 +24,10 @@ release:
 	fi
 	npm run release -- --ci
 
+build-docker:
+	@USER_NAME=$$(git config user.name | tr '[:upper:]' '[:lower:]' | tr ' ' '_'); \
+	REPO_NAME=$$(basename $$(git rev-parse --show-toplevel)); \
+	echo "Building $$USER_NAME/$$REPO_NAME:latest"; \
+	docker build -t $$USER_NAME/$$REPO_NAME:latest .
+
 all: format lint check build
