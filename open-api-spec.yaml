@@ -48,8 +48,59 @@ components:
         error:
           type: string
           description: Error message
+    Order:
+      type: object
+      description: An order object for a trade.
+      required:
+        - id
+        - symbol
+        - size
+        - price
+        - timestamp
+        - exchange
+        - side
+        - status
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the order
+        symbol:
+          type: string
+          description: Trading symbol (e.g., BTCUSD)
+        size:
+          type: number
+          description: Size of the order
+        price:
+          type: number
+          description: Price at which the order was placed
+        timestamp:
+          type: string
+          format: date-time
+          description: Timestamp when the order was created
+        exchange:
+          type: string
+          description: Exchange where the order was placed
+        side:
+          type: string
+          description: Side of the order (buy/sell)
+        status:
+          type: string
+          description: Current status of the order (e.g., open, closed, canceled)
 
 paths:
+  /orders:
+    get:
+      summary: Get all orders
+      responses:
+        '200':
+          description: List of orders
+          content:
+            application/json:
+              schema:
+                type: array
+                description: Array of all orders
+                items:
+                  $ref: '#/components/schemas/Order'
   /parameters:
     get:
       summary: Get all parameters

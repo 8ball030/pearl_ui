@@ -2,12 +2,24 @@
 /* istanbul ignore file */
 /* tslint:disable */
 
+import type { Order } from '../models/Order';
 import type { Parameter } from '../models/Parameter';
 import type { ParameterUpdateRequest } from '../models/ParameterUpdateRequest';
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
 import { request as __request } from '../core/request';
 export class DefaultService {
+	/**
+	 * Get all orders
+	 * @returns Order List of orders
+	 * @throws ApiError
+	 */
+	public static getOrders(): CancelablePromise<Array<Order>> {
+		return __request(OpenAPI, {
+			method: 'GET',
+			url: '/orders'
+		});
+	}
 	/**
 	 * Get all parameters
 	 * @returns Parameter List of parameters

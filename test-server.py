@@ -57,6 +57,32 @@ def update_parameter():
     PARAMETERS[key]["value"] = str(value)
     return jsonify({"message": "Parameter updated successfully"}), 200
 
+@app.get("/orders")
+def get_orders():
+    """
+    Return a list of mock orders.
+    """
+    orders = [
+        {
+            "id": "order_1",
+            "side": "buy",
+            "size": 100,
+            "price": 50.5,
+            "timestamp": "2024-01-01T12:00:00Z",
+            "symbol": "AAPL",
+            "status": "open"
+        },
+        {
+            "id": "order_2",
+            "side": "sell",
+            "size": 200,
+            "price": 75.0,
+            "timestamp": "2024-01-02T15:30:00Z",
+            "symbol": "GOOGL",
+            "status": "closed"
+        }
+    ]
+    return jsonify(orders), 200
 
 if __name__ == "__main__":
     # pip install flask

@@ -8,6 +8,7 @@ export { OpenAPI } from './core/OpenAPI';
 export type { OpenAPIConfig } from './core/OpenAPI';
 
 export type { ErrorResponse } from './models/ErrorResponse';
+export type { Order } from './models/Order';
 export type { Parameter } from './models/Parameter';
 export type { ParameterUpdateRequest } from './models/ParameterUpdateRequest';
 
