@@ -33,8 +33,6 @@ jobs:
             docker_platform: 'windows/amd64' # adjust based on your image build support
 
     runs-on: ${{ matrix.platform }}
-    env:
-      RELEASE_VERSION: 0.0.1
     steps:
       - uses: actions/checkout@v3
       - name: Set up Node.js
