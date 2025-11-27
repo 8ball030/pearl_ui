@@ -27,8 +27,8 @@
 
 <!-- Add a new line -->
 
- <Card >
-	<h1 class="text-lg font-medium mb-4 px-2">Parameter Table</h1>
+<Card>
+	<h1 class="mb-4 px-2 text-lg font-medium">Parameter Table</h1>
 	<Table.Root class="p-6">
 		<Table.Header class="bg-slate-800/70">
 			<Table.Row>
@@ -64,4 +64,4 @@
 			{/each}
 		</Table.Body>
 	</Table.Root>
- </Card>
+</Card>
