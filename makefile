@@ -18,6 +18,6 @@ check-diff:
 	git diff --exit-code
 
 release:
-	npm run release
+	npm run release -- --ci
 
 all: format lint check build
