@@ -5,6 +5,7 @@
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
+	<!-- We add in a background -->
 </svelte:head>
 
 <slot />
